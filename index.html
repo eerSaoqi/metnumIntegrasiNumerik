@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Integrasi Numerik</title>
+    <link rel="icon" type="image/png" href="iconIntegral2.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>KALKULATOR INTEGRASI NUMERIK</h1>
+        <p>Metode Pias</p>
+        <p>Kaidah Segiempat Dan Kaidah Titik Tengah</p>
+        <h2>Dosen Pengampu : Mrs.Evi Sundari ,M.Pd</h2>
+    </div>
+
+    <div class="container">
+        <div class="input-section">
+            <div class="form-group">
+                <label for="function">Fungsi f(x):</label>
+                <input type="text" id="function" placeholder="Contoh: x^2 + 3*x - 5" value="x^2">
+            </div>
+
+            <div class="form-group">
+                <label for="method">Kaidah Integrasi:</label>
+                <select id="method">
+                    <option value="rectangle">Kaidah Segiempat</option>
+                    <option value="midpoint">Kaidah Titik Tengah</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="a">Batas Bawah (a):</label>
+                <input type="number" id="a" step="any" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="b">Batas Atas (b):</label>
+                <input type="number" id="b" step="any" value="1">
+            </div>
+
+            <div class="form-group">
+                <label for="h">Panjang Pias (h):</label>
+                <input type="number" id="h" step="any" min="0.0001" value="0.1">
+            </div>
+
+            <button id="calculate">Hitung</button>
+        </div>
+
+        <div id="error-message" class="error" style="display: none;"></div>
+
+        <div class="result-section" id="result-section">
+            <h2>Hasil Perhitungan</h2>
+            <div id="method-description" class="method-info"></div>
+
+            <div id="table-container"></div>
+
+            <div class="formula">
+                <h3>Hasil Integral Numerik:</h3>
+                <p id="integral-result"></p>
+            </div>
+            <div id="chart-container" style="display: none; height: 400px; margin-top: 20px;">
+                <!-- Chart will be inserted here -->
+            </div>
+        </div>
+
+
+        <div class="method-info">
+            <h3>Petunjuk Penginputan </h3>
+
+            <li><strong>Jumlah n Secara Otomatis menggunakan rumus n = b-a/h</strong></li>
+            <li><strong>Trigonometri</strong></li>
+            <p><strong>sin(x) :</strong> Math.sin(x)</p>
+            <p><strong>cos(x) :</strong> Math.cos(x)</p>
+            <p><strong>tan(x) :</strong> Math.tan(x)</p>
+            <li><strong>Eksponensial & Logaritma</strong></li>
+            <p><strong>exp(x) :</strong> Math.exp(x)</p>
+            <p><strong>log(x) :</strong> Math.log(x)</p>
+            <li><strong>Akar & Pangkat</strong></li>
+            <p><strong>sqrt(x) :</strong> Math.sqrt(x)</p>
+            <p><strong>x² :</strong> x^2</p>
+
+
+            <h3>Informasi Metode</h3>
+            <p><strong>Kaidah Segiempat:</strong> Mengaproksimasi integral sebagai jumlah luas persegi panjang dengan
+                tinggi sesuai nilai fungsi di ujung interval.</p>
+            <p><strong>Kaidah Titik Tengah:</strong> Mengaproksimasi integral sebagai jumlah luas persegi panjang dengan
+                tinggi sesuai nilai fungsi di titik tengah interval.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer id="footer">
+    <div class="footer-content">
+        <h2>Web Ini Dikembangkan Untuk Memenuhi Projek Ujian Akhir Semester IV Mata Kuliah Metode Numerik </h2>
+        <h2>Oleh Kelompok 2 </h2>
+        <p><strong>Moh Irfan Syauqi (2303010198) & Najmi Fathi Robbani (2303010184)</strong></p>
+        <p><strong>Program Studi: Teknik Informatika</strong> </p>
+        <p><strong>Kelas: H-23</strong></p>
+        <p><strong>Universitas Perjuangan Tasikmalaya</strong> </p>
+
+        <div class="social-media">
+            <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/ir5aoqi" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/eerSaoqi" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+
+    </div>
+</footer>
+
+</html>
